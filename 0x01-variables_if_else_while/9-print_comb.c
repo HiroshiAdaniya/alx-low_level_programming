@@ -11,7 +11,7 @@ int main(void)
 	int comma = 44;
 	int spc = 32;
 
-	while (zero <=57)
+	while (zero <= 57)
 	{
 		putchar(zero);
 		if (zero != 57)
