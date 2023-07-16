@@ -28,7 +28,6 @@ int main(void)
 		}
 		first++;
 		second = 49 + (nb++);
-		
 	}
 	putchar(nl);
 
