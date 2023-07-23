@@ -6,47 +6,19 @@
  */
 void jack_bauer(void)
 {
-	int first, second, third, fourth = 48;
-	int delim = 58;
-	int nl = '\n';
+	int hour = '0';
+	int minute = '0';
 
-	for (first = 48; first <= 50; first++)
+	for (hour = 0; hour <= 23; hour++)
 	{
-		if (first < 50)
+		for (minute = 0; minute <= 59; minute++)
 		{
-			for (second = 48; second <= 57; second++)
-			{
-				for (third = 48; third <= 53; third++)
-				{
-					for (fourth = 48; fourth <= 57; fourth++)
-					{
-						_putchar(first);
-						_putchar(second);
-						_putchar(delim);
-						_putchar(third);
-						_putchar(fourth);
-						_putchar(nl);
-					}
-				}
-			}
-		}
-		else if (first == 50)
-		{
-			for (second = 48; second <= 51; second++)
-			{
-				for (third = 48; third <= 53; third++)
-				{
-					for (fourth = 48; fourth <= 57; fourth++)
-					{
-						_putchar(first);
-						_putchar(second);
-						_putchar(delim);
-						_putchar(third);
-						_putchar(fourth);
-						_putchar(nl);
-					}
-				}
-			}
+			_putchar(hour / 10 + '0');
+			_putchar(hour % 10 + '0');
+			_putchar(58);
+			_putchar(minute / 10 + '0');
+			_putchar(minute % 10 + '0');
+			_putchar(10);
 		}
 	}
 }
