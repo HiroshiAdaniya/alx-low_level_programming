@@ -6,25 +6,17 @@
  */
 int print_last_digit(int n)
 {
-	int pos = 48;
-	int print_last_digit = 48;
-	int zero = 48;
+	int print_last_digit = 0;
 
-	if (n > pos)
+	if (n >= 0)
 	{
 		print_last_digit = n % 10;
-		_putchar(zero + print_last_digit);
+		_putchar('0' + print_last_digit);
 	}
-	else if (n < pos)
+	else if (n < 0)
 	{
-		pos = n * -1;
-		print_last_digit = pos % 10;
-		_putchar(zero + print_last_digit);
-	}
-	else
-	{
-		print_last_digit = 48;
-		_putchar(zero + print_last_digit);
+		print_last_digit = (n % -10) * -1;
+		_putchar('0' + print_last_digit);
 	}
 
 	return (print_last_digit);
