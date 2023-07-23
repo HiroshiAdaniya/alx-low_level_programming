@@ -6,11 +6,11 @@
  */
 void print_line(int n)
 {
-	int i = 0;
+	int i;
 
 	if (n <= 0)
 	{
-		_putchar('\n');
+		_putchar(10);
 	}
 	else
 	{
@@ -18,6 +18,6 @@ void print_line(int n)
 		{
 			_putchar(95);
 		}
-		_putchar('\n');
+		_putchar(10);
 	}
 }
