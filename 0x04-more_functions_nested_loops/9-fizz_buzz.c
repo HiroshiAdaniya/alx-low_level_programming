@@ -12,15 +12,32 @@ int main(void)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 		{
-			printf("FizzBuzz ");
+			putchar(70);
+			putchar(105);
+			putchar(122);
+			putchar(122);
+			putchar(66);
+			putchar(117);
+			putchar(122);
+			putchar(122);
+			putchar(32);
 		}
 		else if (i % 3 == 0)
 		{
-			printf("Fizz ");
+			putchar(70);
+			putchar(105);
+			putchar(122);
+			putchar(122);
+			putchar(32);
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz ");
+			putchar(66);
+			putchar(117);
+			putchar(122);
+			putchar(122);
+			putchar(32);
+
 		}
 		else
 		{
