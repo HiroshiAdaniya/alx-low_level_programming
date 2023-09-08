@@ -38,17 +38,8 @@ void print_times_table(int n)
 				else
 				{
 					_putchar((k / 100) + 48);
-					k = k % 100;
-					if (k < 10)
-					{
-						_putchar(48);
-						_putchar((k % 10) + 48);
-					}
-					else
-					{
-						_putchar((k / 10) + 48);
-						_putchar((k % 10) + 48);
-					}
+					_putchar((k / 10 % 10) + 48);
+					_putchar((k % 10) + 48);
 				}
 			}
 			_putchar('\n');
