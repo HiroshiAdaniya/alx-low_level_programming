@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * *_strcpy - Entry point, copies string to buffer
+ * @dest: returnable value
  * @src: user input string / stdin (0)
  * Return: copies string to *dest and returns pointer to dest
  */
