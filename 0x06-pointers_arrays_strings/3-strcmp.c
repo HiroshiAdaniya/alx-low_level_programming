@@ -12,13 +12,20 @@ int _strcmp(char *s1, char *s2)
 	int k = 0;
 	int result = 0;
 
-	while (s1[j] != '\0')
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0')
 		j++;
-	while (s2[k] != '\0')
-		k++;
-	while (s1[i] != '\0' && s2[i] != '\0')
-	{
 
+	if (i > j)
+		k = i;
+	else if (j > i)
+		k = j;
+	else
+		k = i;
+	i = 0;
+	while (i < k)
+	{
 		if (s1[i] > s2[i])
 		{
 			result = 15;
@@ -30,9 +37,11 @@ int _strcmp(char *s1, char *s2)
 			break;
 		}
 		else if (s1[i] == s2[i])
+		{
 			i++;
+		}
 	}
-	if (j == i && k == i)
+	if (s1[i] == s2[i])
 		result = 0;
 	return (result);
 }
