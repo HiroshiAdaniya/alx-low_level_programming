@@ -12,16 +12,15 @@ int main(int argc, char *argv[])
 	int i = 1;
 	int sum = 0;
 
-	if (argc == 1)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else
+	if (argc > 1)
 	{
 		sum = atoi(argv[i]) * atoi(argv[i + 1]);
 		printf("%d\n", sum);
 	}
-
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
 	return (0);
 }
