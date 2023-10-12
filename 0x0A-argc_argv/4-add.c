@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
 	{
 
 		num = atoi(argv[i]);
-		if ((atoi(argv[i]) == 0 && *argv[i] != '0'))
+		if ((*argv[i] >= 'A' && *argv[i] <= 'Z')
+				|| (*argv[i] >= 'a' && *argv[i] <= 'z'))
 		{
 			printf("Error\n");
 			return (1);
