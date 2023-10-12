@@ -9,18 +9,16 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1;
 	int sum = 0;
 
-	if (argc > 1)
-	{
-		sum = atoi(argv[i]) * atoi(argv[i + 1]);
-		printf("%d\n", sum);
-	}
-	else
+	if (argc == 1)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	sum = atoi(argv[1]) * atoi(argv[2]);
+	printf("%d\n", sum);
+
 	return (0);
 }
