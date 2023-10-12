@@ -9,15 +9,17 @@
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0;
+	int sum, num1, num2;
 
-	if (argc == 1)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	sum = atoi(argv[1]) * atoi(argv[2]);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	sum = num1 * num2;
 	printf("%d\n", sum);
 
 	return (0);
