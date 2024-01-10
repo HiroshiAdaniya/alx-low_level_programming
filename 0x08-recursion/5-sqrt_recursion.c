@@ -1,11 +1,10 @@
 #include "main.h"
+int root(int, int);
 /**
  * _sqrt_recursion - finds the natrual square root of a number
  * @n: integer / stdin (0)
  * Return: square root of a number
  */
-int root(int, int);
-
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
