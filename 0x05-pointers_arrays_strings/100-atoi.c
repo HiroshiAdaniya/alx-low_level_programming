@@ -26,7 +26,7 @@ int _atoi(char *s)
 		i++;
 	}
 
-	if ((neg % 2 == 0 && pos % 2 == 0) || (pos == 1 && neg == 0))
+	if ((neg % 2 == 0 && pos % 2 == 0) || (pos == 1 && neg == 0) || (pos == 0 && neg == 0))
 		sign = 1;
 	else if ((neg % 2 == 1 && pos % 2 == 1) || (neg == 1 && pos == 0))
 		sign = -1;
