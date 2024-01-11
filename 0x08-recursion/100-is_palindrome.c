@@ -14,7 +14,7 @@ int is_palindrome(char *s)
 		return (0);
 	i = length(s);
 	i = palindrome(s, 0, i);
-	
+
 	return (i);
 }
 /**
