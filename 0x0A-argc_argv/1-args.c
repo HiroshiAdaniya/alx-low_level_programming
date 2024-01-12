@@ -9,12 +9,21 @@
 int main(int argc, char *argv[] __attribute__((unused)))
 {
 	int z = 48;
-	int i = 0;
+	int i = 1;
 
-	while (i < argc)
+	if (argc == 1)
 	{
-		i++;
-		z++;
+		_putchar(48);
+		_putchar('\n');
+		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		while (i < argc)
+		{
+			i++;
+			z++;
+		}
 	}
 	_putchar(z);
 	_putchar('\n');
