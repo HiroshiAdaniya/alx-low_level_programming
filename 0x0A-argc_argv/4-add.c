@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-
 void Error(void);
 void PrintResult(int);
 /**
@@ -9,7 +8,7 @@ void PrintResult(int);
  * @argv: argument vector
  * Return: 0 if 0 arguments passed, 1 if it's a non-digit, else result
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int i = 1;
 	int j = 0;
