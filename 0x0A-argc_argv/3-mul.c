@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	int result = 0;
 	int sign = 0;
 
-	if (argc == 1)
+	if (argc < 3)
 	{
 		Error();
 		return (1);
