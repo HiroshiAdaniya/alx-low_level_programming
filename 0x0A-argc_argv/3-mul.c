@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		{
 			if (argv[i][j] == '-')
 			{
-				sign = 1;
+				sign++;
 				j++;
 			}
 			if (i == 1)
