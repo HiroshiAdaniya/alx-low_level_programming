@@ -1,4 +1,4 @@
-# Main, argc, argv
+# Main, argc, argv, exit
 
 ### Main
 The main function has two prototypes:
@@ -55,7 +55,7 @@ Example:
 	argv[2] =	love
 	argv[3] =	coding
 
-# \_\_attribute\_\_((unused)) && (void)
+### \_\_attribute\_\_((unused)) && (void)
 
  \_\_attribute\_\_((unused)) is an attribute, and an extensions of the gcc compiler which helps with the suppression warnings of possible unused variables and/or parameters in a function.
 
@@ -77,5 +77,21 @@ Example:
 		(void)s;
 		// code here
 	}
+### exit
 
+By convention, when passing parameters to the MAIN function it's rather preferred to end the program off with the exit() function, than a return statement. This can be found in the <\stdlib.h\> library.
+
+The exit() function has two variations, one if the conditions are met and another one if the conditions are not met. Depending on the host environments the return values might deffer.
+
+Syntax: successful
+
+	exit(EXIT_SUCCESS);
+
+	This returns 0.
+
+Syntax: Failed 
+
+	exit(EXIT_FAILURE);
+
+	This returns a non-zero int.
 //end
