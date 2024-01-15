@@ -14,14 +14,20 @@ char *str_concat(char *s1, char *s2)
 	char *word;
 
 	if (s1 == NULL)
+	{
 		ss1 = 0;
+		s1 = '\0';
+	}
 	else
 		ss1 = length(s1);
 	if (s2 == NULL)
+	{
 		ss2 = 0;
+		s2 = '\0';
+	}
 	else
 		ss2 = length(s2);
-	
+
 	k = ss1 + ss2 + 1;
 	word = (char *)malloc(sizeof(char) * k);
 
