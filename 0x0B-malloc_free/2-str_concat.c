@@ -25,15 +25,11 @@ char *str_concat(char *s1, char *s2)
 
 	while (i < ss1)
 	{
-		if (s1 == NULL)
-			break;
 		word[i] = s1[i];
 		i++;
 	}
 	while (j < ss2)
 	{
-		if (s2 == NULL)
-			break;
 		word[i] = s2[j];
 		j++;
 		i++;
