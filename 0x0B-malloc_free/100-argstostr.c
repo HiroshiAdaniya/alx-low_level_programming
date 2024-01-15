@@ -65,5 +65,5 @@ int length(int ac, char **av)
 		}
 		j = 0;
 	}
-	return (j);
+	return (len);
 }
