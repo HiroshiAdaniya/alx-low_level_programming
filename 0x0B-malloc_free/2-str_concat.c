@@ -10,7 +10,7 @@ int length(char *);
 char *str_concat(char *s1, char *s2)
 {
 	int ss1, ss2 = 0;
-	int i, j = 0;
+	int i, j, k = 0;
 	char *word;
 
 	if (s1 == NULL)
@@ -21,8 +21,9 @@ char *str_concat(char *s1, char *s2)
 		ss2 = 0;
 	else
 		ss2 = length(s2);
-
-	word = (char *)malloc(sizeof(char) * (ss1 + ss2 + 1));
+	
+	k = ss1 + ss2 + 1;
+	word = (char *)malloc(sizeof(char) * k);
 
 	if (word == NULL)
 		return (NULL);
@@ -38,6 +39,7 @@ char *str_concat(char *s1, char *s2)
 		j++;
 		i++;
 	}
+	word[i] = '\0';
 
 	return (word);
 }
