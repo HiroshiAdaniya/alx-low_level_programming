@@ -46,7 +46,8 @@ char *str_concat(char *s1, char *s2)
 int length(char *s)
 {
 	int i = 0;
-
+	if (s == NULL)
+		return (0);
 	while (s[i] != '\0')
 		i++;
 	return (i);
