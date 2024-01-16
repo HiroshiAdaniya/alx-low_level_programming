@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-int length(int __attribute__((unused)), char **);
+int length(int, char **);
 /**
  * argstostr - concatenates all argument of a program
  * @ac: int / argument counter
