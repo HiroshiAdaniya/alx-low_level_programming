@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 int length(int, char **);
 /**
  * argstostr - concatenates all argument of a program
@@ -25,16 +26,12 @@ char *argstostr(int ac, char **av)
 	{
 		while (av[i][j] != '\0')
 		{
-			if (av[i][j] == 32)
-			{
-				j++;
-				break;
-			}
 			string[l] = av[i][j];
 			j++;
 			l++;
 		}
-		string[l] = '\n';
+		if (string[l] == '\0')
+			string[l] = '\n';
 		l++;
 		j = 0;
 	}
@@ -56,10 +53,7 @@ int length(int ac, char **av)
 		{
 			len++;
 			j++;
-			if (av[i][j] == 32)
-				break;
 		}
-		len++;
 		i++;
 		j = 0;
 	}
