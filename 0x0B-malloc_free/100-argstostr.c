@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-int length(int, char **);
+int length(int __attribute__((unused)), char **);
 /**
  * argstostr - concatenates all argument of a program
  * @ac: int / argument counter
@@ -48,21 +48,19 @@ char *argstostr(int ac, char **av)
  */
 int length(int ac, char **av)
 {
-	int i, j, len = 0;
+	int len, i, j = 0;
 
-	for (i = 0; i < ac; i++)
+	while (i < ac)
 	{
 		while (av[i][j] != '\0')
 		{
-			if (av[i][j] == 32)
-			{
-				j++;
-				len++;
-				break;
-			}
-			j++;
 			len++;
+			j++;
+			if (av[i][j] == 32)
+				break;
 		}
+		len++;
+		i++;
 		j = 0;
 	}
 	return (len);
