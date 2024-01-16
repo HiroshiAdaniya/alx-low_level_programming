@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-int length(int, char **);
 /**
  * argstostr - concatenates all argument of a program
  * @ac: int / argument counter
@@ -27,7 +25,7 @@ char *argstostr(int ac, char **av)
 	if (string == NULL)
 		return (NULL);
 
-	for  (i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
 		{
