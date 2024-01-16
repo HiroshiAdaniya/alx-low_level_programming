@@ -16,9 +16,14 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	len = 1 + length(ac, av);
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+			len++;
+	}
+	len = len + ac;
 
-	string = malloc(sizeof(char) * len);
+	string = malloc(sizeof(char) * len + 1);
 	if (string == NULL)
 		return (NULL);
 
@@ -33,21 +38,4 @@ char *argstostr(int ac, char **av)
 			string[l++] = '\n';
 	}
 	return (string);
-}
-/**
- * length - finds the length of a string / 2d string array
- * @ac: int / argument counter
- * @av: argument vector
- * Return: in
- */
-int length(int ac, char **av)
-{
-	int len, i, j = 0;
-
-	for (i = 0; i < ac; i++)
-	{
-		for (j = 0; av[i][j]; j++)
-			len++;
-	}
-	return (len + ac);
 }
