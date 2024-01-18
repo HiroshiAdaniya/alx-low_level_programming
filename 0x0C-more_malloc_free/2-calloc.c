@@ -29,8 +29,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 			free(z);
 			return (NULL);
 		}
-	}
-	for (i = 0; i < nmemb; i++)
 		z[i] = 0;
+	}
 	return (z);
 }
