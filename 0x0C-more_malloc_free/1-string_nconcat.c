@@ -26,21 +26,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n >= j)
 	{
-		for (i = 0; i < j; i++)
-		{
+		for (i = 0; i < j; i++, k++)
 			string[k] = s2[i];
-			k++;
-		}
 	}
 	else
 	{
-		for (i = 0; i < n; i++)
-		{
+		for (i = 0; i < n; i++, k++)
 			string[k] = s2[i];
-			k++;
-		}
 	}
-	string[k] = '\0';
+	string[k++] = '\0';
 	return (string);
 }
 /**
