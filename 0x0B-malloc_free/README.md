@@ -1,9 +1,10 @@
-# Malloc, Free, Valgrind
+# Dynamic Memory Allocation:  Malloc, Free, Valgrind
 
 ## Malloc
-Malloc and free are functions of the standard library "<\stdlib.h\>" that helps us to dynamically allocate and deallocate memory during the execution of our program. Malloc is used when we usually don't know how much memory we need is needed to help execute our program or if it is dependant on a non-fixed variable.
 
-Malloc does this by requesting memory from the heap, and returns an address to a pointer to where the address of memory is located.
+Malloc and free are functions of the standard library "<\stdlib.h\>" that helps us to dynamically allocate and deallocate memory during the execution of our program. Malloc is used when we usually don't know how much memory is needed to help execute our program or when it is dependant on a non-fixed variable.
+
+Malloc does this by requesting memory from the heap and if it successful, it returns an address to a pointer to where the base address is located in the heap. An important note to make is that when memory is allocated to malloc, it reserves a single block of memory to the size that was requested.
 
 ### step 1 - allocating memory
 Syntax:
