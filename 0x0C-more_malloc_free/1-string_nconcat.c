@@ -1,4 +1,4 @@
-#include "main.h"
+~/alx/alx-low_level_programming/0x0C-more_malloc_free#include "main.h"
 #include <stdlib.h>
 unsigned int length(char *);
 /**
@@ -16,7 +16,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	i = length(s1);
 	j = length(s2);
-	l = i + j + 1;
+	if (n >= j)
+		l = i + j + 1;
+	else
+		l = i + n + 1;
 
 	string = (char *)malloc(sizeof(char) * l);
 	if (string == NULL)
