@@ -10,14 +10,15 @@ unsigned int length(char *);
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, k, l = 0;
+	unsigned int i, j = 0;
+	unsigned int k, l = 0;
 	char *string;
 
 	i = length(s1);
 	j = length(s2);
-	l = i + j;
+	l = i + j + 1;
 
-	string = malloc(sizeof(char) * l + 1);
+	string = (char *)malloc(sizeof(char) * l);
 	if (string == NULL)
 	{
 		free(string);
