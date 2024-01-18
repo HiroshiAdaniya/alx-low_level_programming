@@ -50,7 +50,7 @@ unsigned int length(char *a)
 	unsigned int i = 0;
 
 	if (a == NULL)
-		return (i);
+		return (0);
 	while (a[i] != '\0')
 		i++;
 	return (i);
