@@ -8,7 +8,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void **z = 0;
+	unsigned int **z = 0;
 	unsigned int i = 0;
 
 	if (nmemb == 0 || size == 0)
