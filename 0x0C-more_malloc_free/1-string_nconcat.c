@@ -1,4 +1,4 @@
-~/alx/alx-low_level_programming/0x0C-more_malloc_free#include "main.h"
+#include "main.h"
 #include <stdlib.h>
 unsigned int length(char *);
 /**
