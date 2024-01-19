@@ -17,13 +17,19 @@ int *array_range(int min, int max)
 	mem = max - min;
 	z = malloc(sizeof(int) * mem);
 	if (z == NULL)
+	{
+		free(z);
 		return (NULL);
+	}
 	for (i = 0; min < max; i++, min++)
 		z[i] = min;
 	mem = mem + 1;
 	z = realloc(z, sizeof(int) * mem);
 	if (z == NULL)
+	{	
+		free(z);
 		return (NULL);
+	}
 	z[i] = min;
 	return (z);
 }
