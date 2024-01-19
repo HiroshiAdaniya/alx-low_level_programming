@@ -8,7 +8,7 @@
  */
 int *array_range(int min, int max)
 {
-	int *z;
+	int *z, *p;
 	int mem, i = 0;
 
 	if (min > max)
@@ -24,9 +24,9 @@ int *array_range(int min, int max)
 	for (i = 0; min < max; i++, min++)
 		z[i] = min;
 	mem = mem + 1;
-	z = realloc(z, sizeof(int) * mem);
-	if (z == NULL)
+	p = realloc(z, sizeof(int) * mem);
+	if (p == NULL)
 		return (NULL);
-	z[i] = min;
-	return (z);
+	p[i] = max;
+	return (p);
 }
