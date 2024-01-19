@@ -18,15 +18,12 @@ int *array_range(int min, int max)
 	z = malloc(sizeof(int) * mem);
 	if (z == NULL)
 		return (NULL);
-	for (i = 0; min < max; i++)
-	{
+	for (i = 0; min < max; i++, min++)
 		z[i] = min;
-		min++;
-	}
 	mem = mem + 1;
 	z = realloc(z, sizeof(int) * mem);
 	if (z == NULL)
 		return (NULL);
-	z[i] = max;
+	z[i++] = max;
 	return (z);
 }
