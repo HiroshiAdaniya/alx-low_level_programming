@@ -24,6 +24,6 @@ int *array_range(int min, int max)
 	z = realloc(z, sizeof(int) * mem);
 	if (z == NULL)
 		return (NULL);
-	z[i++] = max;
+	z[i] = min;
 	return (z);
 }
