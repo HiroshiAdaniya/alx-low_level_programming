@@ -19,8 +19,11 @@ int *array_range(int min, int max)
 	if (z == NULL)
 		return (NULL);
 
-	for (i = 0; min < mem; i++, min++)
+	for (i = 0; min < max; i++)
+	{
 		z[i] = min;
+		min++;
+	}
 
 	return (z);
 }
