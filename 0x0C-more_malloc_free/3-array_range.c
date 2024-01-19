@@ -15,15 +15,14 @@ int *array_range(int min, int max)
 		return (NULL);
 
 	mem = max - min;
-	z = malloc(sizeof(int) * mem);
+	/* mem will not include the last int which is max */
+
+	z = malloc(sizeof(int) * mem + 1);
+	/* increasing the size by an extra int, will help include the max value */
 	if (z == NULL)
 		return (NULL);
-
-	for (i = 0; min < max; i++)
-	{
+	/* this loop will assigns the values to the pointer */
+	for (i = 0; min <= max; i++, min++)
 		z[i] = min;
-		min++;
-	}
-
 	return (z);
 }
