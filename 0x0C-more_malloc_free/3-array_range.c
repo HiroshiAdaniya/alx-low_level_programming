@@ -14,19 +14,11 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	mem = max - min;
+	mem = max - min + 1;
 	z = calloc(mem, sizeof(int));
 	if (z == NULL)
 		return (NULL);
-	for (i = 0; min < max; i++, min++)
+	for (i = 0; min <= max; i++, min++)
 		z[i] = min;
-	mem = mem + 1;
-	z = realloc(z, sizeof(int) * mem);
-	if (z == NULL)
-	{
-		free(z);
-		return (NULL);
-	}
-	z[i] = max;
 	return (z);
 }
