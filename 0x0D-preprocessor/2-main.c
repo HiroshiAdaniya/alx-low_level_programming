@@ -1,4 +1,6 @@
 #include "main.h"
+#include "1-pi.h"
+#include "0-object_like_macro.h"
 #include <stdlib.h>
 /**
  * main - displays the name of the file it was compile from
