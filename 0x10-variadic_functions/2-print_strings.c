@@ -10,9 +10,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i = 0;
 	char *string;
 	va_list  z;
-	
+
 	if (n == 0)
-		exit(EXIT_FAILURE);
+		exit(0);
 	va_start(z, n);
 	for (i = 0; i < n; i++)
 	{
@@ -20,7 +20,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (*string == '\0')
 			printf("(nil)");
 		printf("%s", string);
-		if ((i < n - 1) && separator != NULL)
+		if (separator == NULL)
+			continue;
+		if ((i < n - 1))
 			printf("%s", separator);
 	}
 	printf("\n");
