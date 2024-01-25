@@ -1,4 +1,5 @@
 #include "variadic_functions.h"
+int length(const char * const);
 /**
  * print_all - prints anything
  * @format: a constant pointer
@@ -6,18 +7,13 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *string;
-	int in, len, on;
+	char *string, ch;
+	int in, len, on, i = 0;
 	double fl;
-	char ch;
 	va_list list;
 
 	va_start(list, format);
-
-	while (format[len] != '\0')
-		len++;
-
+	len = length(format);
 	while (i < len)
 	{
 		switch (format[i])
@@ -43,6 +39,7 @@ void print_all(const char * const format, ...)
 					string = "(nil)";
 				printf("%s", string);
 				on = 1;
+				break;
 		}
 		if (on && (i < len - 1))
 			printf(", ");
@@ -51,4 +48,18 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 	va_end(list);
+}
+/**
+ * length - determines the length of a string
+ * @s: const pointer to a string
+ * Return: int
+ */
+int length(const char * const s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+
+	return (i);
 }
