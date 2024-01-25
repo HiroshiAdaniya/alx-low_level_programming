@@ -16,7 +16,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		string = malloc(sizeof(va_arg(z, char *)) * sizeof(char));
 		if (string == NULL)
+		{
+			free(string);
 			exit(EXIT_FAILURE);
+		}
 		string = va_arg(z, char *);
 		if (*string == '\0')
 			printf("(nil)");
