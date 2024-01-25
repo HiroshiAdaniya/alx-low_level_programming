@@ -10,16 +10,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i = 0;
 	char *string;
 	va_list  z;
-
+	
+	if (n == 0)
+		exit(EXIT_FAILURE);
 	va_start(z, n);
 	for (i = 0; i < n; i++)
 	{
-		string = malloc(sizeof(va_arg(z, char *) + 1) * sizeof(char));
-		if (string == NULL)
-		{
-			free(string);
-			exit(EXIT_FAILURE);
-		}
 		string = va_arg(z, char *);
 		if (*string == '\0')
 			printf("(nil)");
