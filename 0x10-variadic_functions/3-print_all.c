@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 'f':
 				fl = va_arg(list, double);
-				printf("%.f", fl);
+				printf("%f", fl);
 				on = 1;
 				break;
 			case 's':
