@@ -14,7 +14,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(z, n);
 	for (i = 0; i < n; i++)
 	{
-		string = malloc(sizeof(va_arg(z, char *)) * sizeof(char));
+		string = malloc(sizeof(va_arg(z, char *) + 1) * sizeof(char));
 		if (string == NULL)
 		{
 			free(string);
