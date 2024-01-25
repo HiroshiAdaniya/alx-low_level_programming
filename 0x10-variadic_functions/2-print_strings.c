@@ -17,10 +17,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		string = va_arg(z, char *);
-		if (*string == '\0')
+		if (string == NULL)
 			string = "(nil)";
 		printf("%s", string);
-		if ((i < n - 1))
+		if (i < n - 1)
 			printf("%s", separator);
 	}
 	printf("\n");
