@@ -7,30 +7,25 @@ int length(const char * const);
  */
 void print_all(const char * const format, ...)
 {
-	char *string, ch;
-	int in, len, on, i = 0;
-	double fl;
+	char *string;
+	int on, i = 0;
 	va_list list;
 
 	va_start(list, format);
-	len = length(format);
-	while (format != NULL && i < len)
+	while (format != NULL && format[i] != '\0')
 	{
 		switch (format[i])
 		{
 			case 'c':
-				ch = va_arg(list, int);
-				printf("%c", ch);
+				printf("%c",va_arg(list, int));
 				on = 1;
 				break;
 			case 'i':
-				in = va_arg(list, int);
-				printf("%d", in);
+				printf("%d", va_arg(list, int));
 				on = 1;
 				break;
 			case 'f':
-				fl = va_arg(list, double);
-				printf("%f", fl);
+				printf("%f", va_arg(list, double));
 				on = 1;
 				break;
 			case 's':
@@ -41,25 +36,11 @@ void print_all(const char * const format, ...)
 				on = 1;
 				break;
 		}
-		if (on && (i < len - 1))
+		if (on == 1 && format[i + 1] != '\0')
 			printf(", ");
 		on = 0;
 		i++;
 	}
 	printf("\n");
 	va_end(list);
-}
-/**
- * length - determines the length of a string
- * @s: const pointer to a string
- * Return: int
- */
-int length(const char * const s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-		i++;
-
-	return (i);
 }
