@@ -14,14 +14,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(z, n);
 	for (i = 0; i < n; i++)
 	{
-		string = malloc(sizeof(char) * (sizeof(va_arg(z, char *) + 1)));
-		if (string == NULL)
-			printf("(nil)");
 		string = va_arg(z, char *);
 		if (*string == '\0')
 			printf("(nil)");
-		else
-			printf("%s", string);
+		printf("%s", string);
 		if ((i < n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
