@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * free_listint2 - frees a linked list and sets pointer to NULL
- * @head; a pointer to a linked list
+ * @head: a pointer to a linked list
  * Return: Nothing / void
  */
 void free_listint2(listint_t **head)
@@ -14,4 +14,5 @@ void free_listint2(listint_t **head)
 		*head = (*head)->next;
 	}
 	free(*head);
+	*head = NULL;
 }
