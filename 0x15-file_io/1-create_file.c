@@ -16,7 +16,7 @@ int create_file(const char *filename, char *text_content)
 	if (filep == -1)
 		return (-1);
 	close(filep);
-	fp = fopen(filename, "w+");
+	fp = fopen(filename, "w");
 	if (fp == NULL)
 		return (-1);
 	if (text_content == NULL)
@@ -28,7 +28,7 @@ int create_file(const char *filename, char *text_content)
 	j = fputs(text_content, fp);
 	if (j == -1)
 		return (-1);
-	fclose(fp);
 
+	fclose(fp);
 	return (1);
 }
