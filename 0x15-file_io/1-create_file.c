@@ -12,8 +12,8 @@ int create_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	filep = open(filename, O_CREAT, S_IRUSR | S_IWUSR /*or 0600*/);
-	if (filep == -1)
+	filep = open(filename, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR /*or 0600*/);
+	if (filep < 0)
 		return (-1);
 	close(filep);
 
