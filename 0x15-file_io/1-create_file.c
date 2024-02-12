@@ -19,12 +19,6 @@ int create_file(const char *filename, char *text_content)
 	fp = fopen(filename, "w");
 	if (fp == NULL)
 		return (-1);
-	if (text_content == NULL)
-	{
-		j = fputs("\0", fp);
-		if (j == -1)
-			return (-1);
-	}
 	j = fputs(text_content, fp);
 	if (j == -1)
 		return (-1);
