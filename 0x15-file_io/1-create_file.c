@@ -7,22 +7,19 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int filep, j;
-	FILE *fp;
+	int fp, j;
+	int i = 0;
 
 	if (filename == NULL)
 		return (-1);
-	filep = open(filename, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR /*or 0600*/);
-	if (filep < 0)
+	fp = open(filename, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+	if (fp == -1)
 		return (-1);
-	close(filep);
-
-	fp = fopen(filename, "w");
-	if (fp == NULL)
-		return (-1);
-	j = fputs(text_content, fp);
+	while (text_content[i] != '\0')
+		i++;
+	j = write(fp, text_content, i);
 	if (j == -1)
 		return (-1);
-	fclose(fp);
+	close(fp);
 	return (1);
 }
