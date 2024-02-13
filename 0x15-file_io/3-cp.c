@@ -9,7 +9,7 @@ void error(int, char *);
 int main(int argc, __attribute__((unused))char *argv[])
 {
 	int fileto, filefrom, j;
-	int i = 1024;
+	unsigned int i = 1024;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -36,10 +36,15 @@ int main(int argc, __attribute__((unused))char *argv[])
 			error(99, argv[2]);
 	}
 	j = close(filefrom);
-	i = close(fileto);
-	if (j == -1 || i == -1)
+	if (j == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", j);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", filefrom);
+		exit(100);
+	}
+	j = close(fileto);
+	if (j == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileto);
 		exit(100);
 	}
 	return (0);
@@ -51,7 +56,7 @@ int main(int argc, __attribute__((unused))char *argv[])
  * Return: Nothing / void
  */
 void error(int a, char *string)
-{	
+{
 	if (a == 98)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", string);
