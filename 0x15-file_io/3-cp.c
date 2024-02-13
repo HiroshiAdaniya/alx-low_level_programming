@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		error(99, argv[2]);
 	while (i == 1024)
 	{
-		i = read(filefrom, buffer, i);
+		i = read(filefrom, buffer, 1024);
 		if (i == -1)
 			error(98, argv[1]);
 		j = write(fileto, buffer, i);
