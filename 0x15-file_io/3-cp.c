@@ -17,8 +17,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (argv[1] == NULL)
-		return (-1);
+
 	filefrom = open(argv[1], O_RDONLY);
 	if (filefrom == -1)
 		error(98, argv[1]);
@@ -26,6 +25,7 @@ int main(int argc, char *argv[])
 			| S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fileto == -1)
 		error(99, argv[2]);
+
 	while (i == 1024)
 	{
 		i = read(filefrom, buffer, 1024);
