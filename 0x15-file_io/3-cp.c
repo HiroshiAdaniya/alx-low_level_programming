@@ -6,10 +6,10 @@ void error(int, char *);
  * @argv: argument vector / pointer to array of string
  * Return: 0 on success, else terminate with exit codes
  */
-int main(int argc, __attribute__((unused))char *argv[])
+int main(int argc, char *argv[])
 {
 	int fileto, filefrom, j;
-	unsigned int i = 1024;
+	int i = 1024;
 	char buffer[1024];
 
 	if (argc != 3)
