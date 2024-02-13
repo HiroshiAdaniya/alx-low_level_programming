@@ -20,8 +20,9 @@ int append_text_to_file(const char *filename, char *text_content)
 		while (text_content[i] != '\0')
 			i++;
 		j = write(fp, text_content, i);
-		if (j == -1 || fp == -1)
+		if (j == -1)
 		return (-1);
 	}
+	close(fp);
 	return (1);
 }
