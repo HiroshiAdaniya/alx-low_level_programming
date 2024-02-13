@@ -21,8 +21,7 @@ int main(int argc, char *argv[])
 	filefrom = open(argv[1], O_RDONLY);
 	if (filefrom == -1)
 		error(98, argv[1]);
-	fileto = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, S_IRUSR
-			| S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	fileto = open(argv[2], O_RDWR | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	if (fileto == -1)
 		error(99, argv[2]);
 
