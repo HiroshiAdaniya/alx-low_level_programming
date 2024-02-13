@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	filefrom = open(argv[1], O_RDONLY);
 	if (filefrom == -1)
 		error(98, argv[1]);
-	fileto = open(argv[2], O_RDWR | O_CREAT | O_TRUNC | O_APPEND, 0664);
+	fileto = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (fileto == -1)
 		error(99, argv[2]);
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	j = close(fileto);
 	if (j == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileto);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", filefrom);
 		exit(100);
 	}
 	return (0);
