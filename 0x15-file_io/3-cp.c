@@ -10,11 +10,8 @@ int main(int argc, char *argv[])
 {
 	int fileto, filefrom, j;
 	ssize_t i = 1024;
-	char *buffer;
+	char buffer[1024];
 
-	buffer = malloc(sizeof(char) * i);
-	if (buffer == NULL)
-		exit(EXIT_FAILURE);
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -49,7 +46,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileto);
 		exit(100);
 	}
-	free(buffer);
+
 	return (0);
 }
 /**
