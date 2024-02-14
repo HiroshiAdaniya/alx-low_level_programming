@@ -6,10 +6,10 @@ void error(int, char *);
  * @argv: argument vector / pointer to array of string
  * Return: 0 on success, else terminate with exit codes
  */
-int main(int argc, char *argv[])
+void main(int argc, char *argv[])
 {
 	int fileto, filefrom, j;
-	int i = 1024;
+	ssize_t i = 1024;
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * i);
@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 		if (j == -1)
 			error(99, argv[2]);
 	}
-	free(buffer);
 	j = close(filefrom);
 	if (j == -1)
 	{
@@ -50,7 +49,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileto);
 		exit(100);
 	}
-	return (0);
+	free(buffer);
 }
 /**
  * error - prints an error message to the POSIX standard error
