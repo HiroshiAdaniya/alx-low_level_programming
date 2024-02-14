@@ -6,7 +6,7 @@ void error(int, char *);
  * @argv: argument vector / pointer to array of string
  * Return: 0 on success, else terminate with exit codes
  */
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int fileto, filefrom, j;
 	ssize_t i = 1024;
@@ -50,6 +50,7 @@ void main(int argc, char *argv[])
 		exit(100);
 	}
 	free(buffer);
+	return (0);
 }
 /**
  * error - prints an error message to the POSIX standard error
