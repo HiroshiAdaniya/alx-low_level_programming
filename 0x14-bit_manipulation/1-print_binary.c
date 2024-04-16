@@ -6,20 +6,24 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int i, j = 0;
-	char on = 48;
+	unsigned long int i = 0;
 
-	i = powers(2, sizeof(unsigned long int) * 8 - 1);
+	if (n == 0)
+		_putchar(48);
+	while (powers(2, i) <= n)
+		i++;
 	while (i)
 	{
-		j = n & i;
-		if (j == i){
-			on = 49;
-			_putchar(49);
-		}
-		else if (on == 49 || i == 49)
+		i--;
+		if (n < powers(2, i))
 			_putchar(48);
-		i >>= 1;
+		else if (n > powers(2, i) || n == powers(2, i))
+		{
+			_putchar(49);
+			n = n - powers(2, i);
+		}
+		if (i == 0)
+			break;
 	}
 }
 /**
