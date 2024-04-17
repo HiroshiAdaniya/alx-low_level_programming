@@ -10,23 +10,22 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned int limit = (sizeof(unsigned long int) * 8 - 1);
 	unsigned long int oldn = 0;
 	int bit = 1;
-	int i = 0;
 
 	if (index > limit)
 		return (-1);
 
 	bit = bit << index;
-	if (*n & i)
-		bit = 1;
-	else if (*n | i)
+	if (*n & bit)
 	{
 		oldn = *n;
 		*n = *n - bit;
-		if (oldn != *n)
+		if (*n != oldn)
 			bit = 1;
 		else
 			bit = -1;
 	}
+	else
+		bit = 1;
 
 	return (bit);
 }
