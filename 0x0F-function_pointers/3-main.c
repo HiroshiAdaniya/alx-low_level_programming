@@ -1,13 +1,13 @@
 #include "3-calc.h"
 /**
- * main - entry point
- * @argc: int
- * @argv: pointer to an array of strings
- * Return: Always 0 (Success)
+ * main - Performs simple operation
+ * @argc: int / argument counter
+ * @argv: pointer to an array of char / argument vector
+ * Return: An int / result
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, calc;
+	int num1, num2, *sum, calc = 0;
 	char *operator;
 
 	if (argc != 4)
@@ -19,20 +19,17 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	operator = argv[2];
 	num2 = atoi(argv[3]);
-	if (*operator != 43 && *operator != 42 && *operator != 45 &&
-	*operator != 47 && *operator != 37)
+
+	calc = (*get_op_func(operator))(num1, num2);
+	sum = &calc;
+
+	if (sum == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if ((*operator == '/' || *operator == '%') && num2 == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
 
-	calc = get_op_func(operator)(num1, num2);
-	printf("%d\n", calc);
+	printf("%d\n", *sum);
+
 	return (0);
 }
-
