@@ -26,7 +26,8 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(99);
-	}	
+	}
+
 	num2 = atoi(argv[3]);
 
 	calc = (*get_op_func(operator))(num1, num2);
