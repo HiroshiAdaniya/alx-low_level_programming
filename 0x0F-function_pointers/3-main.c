@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include <string.h>
 /**
  * main - Performs simple operation
  * @argc: int / argument counter
@@ -7,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, *sum, calc = 0;
+	int num1, num2, calc = 0;
 	char *operator;
 
 	if (argc != 4)
@@ -18,18 +19,18 @@ int main(int argc, char *argv[])
 
 	num1 = atoi(argv[1]);
 	operator = argv[2];
-	num2 = atoi(argv[3]);
 
-	calc = (*get_op_func(operator))(num1, num2);
-	sum = &calc;
-
-	if (sum == NULL)
+	if (strlen(argv[2]) > 1 || (*operator != '+' &&
+	*operator != '-' && *operator != '*' &&
+	*operator != '/' && *operator != '%'))
 	{
 		printf("Error\n");
 		exit(99);
-	}
+	}	
+	num2 = atoi(argv[3]);
 
-	printf("%d\n", *sum);
+	calc = (*get_op_func(operator))(num1, num2);
+	printf("%d\n", calc);
 
 	return (0);
 }
