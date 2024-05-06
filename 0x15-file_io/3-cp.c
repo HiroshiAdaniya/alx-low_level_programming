@@ -58,14 +58,16 @@ void file_from_error(char *file)
 void transfer_data(int file_from, int file_to, char *f1, char *f2)
 {
 	char buffer[1024];
-	int i = 0;
+	int i = 1024;
+	int j = 0;
 
-	while ((i = read(file_from, buffer, 1024)) != 0 && i != EOF)
+	while (i == 1024)
 	{
+		i = read(file_from, buffer, 1024)
 		if (i == -1)
 			file_from_error(f1);
-		i =  write(file_to, buffer, i);
-		if (i == -1)
+		j =  write(file_to, buffer, i);
+		if (j == -1)
 			file_to_error(f2);
 	}
 }
